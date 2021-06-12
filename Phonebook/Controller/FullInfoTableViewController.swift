@@ -31,7 +31,6 @@ class FullInfoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataOfPeople")!
         
-        
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "☎️ \(person[indexPath.section].phone)"

@@ -22,13 +22,30 @@ extension Person {
         var array: [Person] = []
         let classToMakePersonsFrom = DataManager()
         
-        for _ in 1...10 {
+        var arrayOfNames = classToMakePersonsFrom.arrayOfNames
+        var arrayOfLastNames = classToMakePersonsFrom.arrayOfLastNames
+        var arrayOfEmails = classToMakePersonsFrom.arrayOfEmails
+        var arrayOfPhones = classToMakePersonsFrom.arrayOfPhones
+        
+        for _ in 1...classToMakePersonsFrom.arrayOfNames.count {
+            
+            let inputNameElement = arrayOfNames.randomElement()
+            let inputLastNameElement = arrayOfLastNames.randomElement()
+            let inputEmailElement = arrayOfEmails.randomElement()
+            let inputPhoneElement = arrayOfPhones.randomElement()
+
+            arrayOfNames = arrayOfNames.filter { $0 != inputNameElement }
+            arrayOfLastNames = arrayOfLastNames.filter { $0 != inputLastNameElement }
+            arrayOfEmails = arrayOfEmails.filter { $0 != inputEmailElement }
+            arrayOfPhones = arrayOfPhones.filter { $0 != inputPhoneElement }
+            
             let person = Person(
-                name: classToMakePersonsFrom.arrayOfNames.randomElement() ?? "Random",
-                lastName: classToMakePersonsFrom.arrayOfLastNames.randomElement() ?? "Random",
-                email: classToMakePersonsFrom.arrayOfEmails.randomElement() ?? "Random",
-                phone: classToMakePersonsFrom.arrayOfPhones.randomElement() ?? "Random"
+                name: inputNameElement ?? "Unknown Name",
+                lastName: inputLastNameElement ?? "Unknown Last Name",
+                email: inputEmailElement ?? "Unknown Email",
+                phone: inputPhoneElement ?? "Unknown Phone"
             )
+            
             array.append(person)
             
         }

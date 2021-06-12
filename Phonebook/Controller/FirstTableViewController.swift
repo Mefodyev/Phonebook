@@ -49,23 +49,6 @@ extension FirstTableViewController {
             destinationVC.person = person
             destinationVC.navigationItem.backBarButtonItem?.title = titleText
         }
-        
-        
-//            for vc in tabBarController.viewControllers! {
-//                let vc = navController.topViewController as! FullInfoTableViewController
-//                    print("ШАЛОСТЬ УДАЛАСЬ")
-//                vc.person = randomPeople
-//            }
-        }
-        }
-//        if let tabBarController = segue.destination as? UITabBarController {
-//            for vc in tabBarController.viewControllers! {
-//                if let navigationVC = vc as? UINavigationController {
-//                    if let fullInfoVC = navigationVC.topViewController as? FullInfoTableViewController {
-//                        fullInfoVC.person = randomPeople
-//                    }
-//                }
-//            }
-//        }
-
+    }
+}
 
